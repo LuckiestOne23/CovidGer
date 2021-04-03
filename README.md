@@ -11,6 +11,7 @@ Right now it simply converts the PDF to an image, crops it and uses template mat
 
 Please put every PDF into the "pdf"-Folder. The "numbers"-Folder is just there for template matching and has to be copied.
 The program takes round about 1.5 seconds per PDF so you might want to get yourself a cup of tea when converting great amounts.
+Scraping.py and pdfRead.py have to be in the same folder for it to work. Run scraping.py first and wait for it to finish.
 
 So far the only district available is Vorpommern-Greifswald. Just crop the image with different values and test with cv2.imshow() until you get fitting values for other districts. Feel free to add your cropping-values. 
 
@@ -31,5 +32,7 @@ Egal, welches Problem besteht, Tee hilft immer.
 
 Aus der ersten Seite der PDFs wird ein Bild erstellt, dieses wird zugeschnitten und die einzelnen Zahlen danach über Template Matching zugeordnet. Um weitere Kreise hinzuzufügen, müssen die Cropping-Variablen angepasst werden. Diese können dann im Dictionary vermerkt werden. Ich freue mich, falls etwaige Schneide-Werte an mich herangetragen werden. 
 Ich selbst sah für mich leider nicht die Notwendigkeit, diese einzufügen.
+Nun ist auch ein PDF-Downloader vorhanden, welcher automatisch sämtliche verfügbaren Covid-Lageberichte herunterlädt, die nicht in Zip-Archiven abgespeichert sind. Bitte diesen zuerst ausführen und dann die pdfRead-Datei starten. Damit es reibungslos funktioniert, müssen beide Python-Dateien im gleichen Ordner liegen.
+
 Viel Spaß mit dem Skript, ich hoffe, dass es die Arbeit etwas erleichtert.
 Frohes Schaffen!
