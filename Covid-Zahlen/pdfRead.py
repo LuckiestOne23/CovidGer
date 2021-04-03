@@ -1,4 +1,4 @@
-# Programm ment to turn the PDFs available on LaGuS-MV into readable csv-Data.
+# Programm meant to turn the PDFs available on LaGuS-MV into readable csv-Data.
 # Please add below what incidence you are looking for.
 # Author: Simon
 # Edited: 02.04.2021
@@ -29,13 +29,14 @@ def adequateCropping(kreis):
 
 def getDateFromFilename(name):
     name = str(name).replace(".bericht.pdf", "")
-    date = "Datum: "
+    date = ""
     date += name[-2] + name[-1] + "." + name[-5] + name[-4] + "." + name[-10] + name[-9] + name[-8] + name[-7]
     return date
 
 
 files = getFilename()
 result = open("Inzidenz.txt", 'w')
+result.write("Datum, Inzidenz\n")
 # Allowed entries: VG (feel free to add more) ->MV won't work currently since the background is red
 incidence = "VG"
 
@@ -91,6 +92,6 @@ for file in files:
         else:
             inzidenz = inzidenz + str(i[1])
 
-    result.write(getDateFromFilename(file) + "\tInzidenz: " + inzidenz + "\n")
+    result.write(getDateFromFilename(file) + "," + inzidenz + "\n")
 
 result.close()
