@@ -29,6 +29,7 @@ def adequateCropping(kreis):
 
 def getDateFromFilename(name):
     # Since some LaGuS-PDFs end with .bericht-1.pdf, we can't simply replace .bericht-pdf
+    name = str(name)
     name = str(name[:name.index(".bericht")])
     date = name[-2] + name[-1] + "." + name[-5] + name[-4] + "." + name[-10] + name[-9] + name[-8] + name[-7]
     return date
@@ -63,7 +64,6 @@ if __name__ == "__main__":
         image = cv2.imread("images/image.png")
         cropping1, cropping2 = adequateCropping(incidence)
         cropped = image[cropping1[0]: cropping1[1], cropping2[0]: cropping2[1]]
-
         # To save the positions of found numbers
         positions = []
 
@@ -78,7 +78,7 @@ if __name__ == "__main__":
             for pt in zip(*loc[::-1]):
                 same = False
                 for x in positions:
-                    if (abs(x[0][0] - pt[0]) <= 10 or abs(x[0][1] - pt[1]) <= 10) and x[1] == i:
+                    if (abs(x[0][0] - pt[0]) <= 15) and x[1] == i:
                         same = True
                         break
                 if not same:
