@@ -35,7 +35,7 @@ def getDateFromFilename(name):
     return date
 
 
-if __name__ == "__main__":
+def readPDF():
     files = getFilename()
     result = open("Inzidenz.txt", 'w')
     result.write("Datum, Inzidenz\n")
@@ -50,9 +50,6 @@ if __name__ == "__main__":
             rem('images/image.png')
         except FileNotFoundError:
             pass
-
-        # Reading the location where to save the file
-        location = path + '/images'
 
         # Getting image of first page
         for img_index, img in enumerate(pdf_file.getPageImageList(0)):
@@ -96,3 +93,7 @@ if __name__ == "__main__":
         result.write(getDateFromFilename(file) + "," + inzidenz + "\n")
 
     result.close()
+
+
+if __name__ == "__main__":
+    readPDF()
