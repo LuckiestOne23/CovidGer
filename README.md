@@ -3,6 +3,7 @@ A small python script able to read PDF-files provided by LAGuS MV. Will return t
 
 
 The three Python-Files are able to download and read pdf-Files from LAGuS MV and plot the difference between the incidence provided by LAGuS and the RKI.
+A huge thank to @dammhannes for providing the plotting.py! 
 
 Please put every PDF into the "pdf"-Folder if adding them manually. The "numbers"-Folder is just there for template matching and has to be copied.
 The program takes round about 1.5 seconds per PDF so you might want to get yourself a cup of tea when converting great amounts.
