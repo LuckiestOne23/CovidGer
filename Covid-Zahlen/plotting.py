@@ -51,7 +51,8 @@ while True:
         print("Ungültige Eingabe.")
     else:
         break
-if abfrage.upper == 'J':
+if abfrage.upper() == "J":
+    print("In Abfrage")
     # Getting every PDF within 2021
     scrapePDF()
     # Reading every PDF and returning the incidence
